@@ -28,6 +28,59 @@
         </div>
     </header>
 
+    <main class="flex h-screen">
+        <aside class="flex flex-col items-center p-3 bg-slate-800 w-1/4 border-r-1 border-amber-500">
+            <input type="button" value="+ Ajouter un joueur" name="plan"
+                class="text-white bg-green-700 p-2 rounded-lg w-[97%] mb-6">
+            <div class="flex justify-between items-center w-[97%] mb-5">
+                <p class="text-white font-bold text-sm">Effectif</p>
+                <input type="button" value="1 joueur(s)" class="text-white bg-slate-950 p-1 rounded-md text-sm">
+            </div>
+            <p class="text-gray-400 text-sm mb-4">Cliquez sur un joueur place pour voir sa case sur le terrain. pour
+                modifier, pour supprimer.
+            </p>
+
+            <div class="flex flex-col p-5 w-[97%] border border-l-5 border-amber-500 rounded-lg">
+                <div class="flex justify-between items-center ">
+                    <div class="flex items-center gap-3 ">
+                        <p class="text-amber-500">11</p>
+                        <div>
+                            <p class="text-white font-bold">joueur</p>
+                            <p class="text-amber-500">Post</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button>🖊️</button>
+                        <button>🗑️</button>
+                    </div>
+                </div>
+
+                <select name="posts" id="posts" class="text-gray-400">
+                    <option value="">Sur le banc</option>
+                    <option value="GB-Gardien">GB-Gardien</option>
+                    <option value="DG-Defenseur gauche">DG-Defenseur gauche</option>
+                    <option value="DC - Défenseur central 1">DC - Défenseur central 1</option>
+                    <option value="DC - Défenseur central 2">DC - Défenseur central 2</option>
+                    <option value="DD - Défenseur droit">DD - Défenseur droit</option>
+                    <option value="MG - Milieu gauche">MG - Milieu gauche</option>
+                    <option value="MC - Milieu central 1">MC - Milieu central 1</option>
+                    <option value="MC - Milieu central 2">MC - Milieu central 2</option>
+                    <option value="MD - Milieu droit">MD - Milieu droit</option>
+                    <option value="BU - Buteur 1">BU - Buteur 1</option>
+                    <option value="BU - Buteur 2">BU - Buteur 2</option>
+                </select>
+            </div>
+
+
+
+
+        </aside>
+
+        <section class="w-3/4">
+
+        </section>
+    </main>
+
 </body>
 
 </html>

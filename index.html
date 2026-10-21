@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TACHKILA</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header class="flex justify-between items-center p-4 bg-slate-800 border-b-1 border-amber-500">
+        <div class="flex items-center gap-3">
+            <img src="./assets/icons/Microsoft-Fluentui-Emoji-3d-Soccer-Ball-3d.svg" alt="TACHKILA"
+                class="size-4 outline-7 rounded-4xl outline-emerald-800 ring-1 ring-green-400">
+            <h1 class="text-white font-bold">TACHKILA</h1>
+        </div>
+        <ul class="flex gap-8 list-disc">
+            <li class="text-amber-400">GB</li>
+            <li class="text-sky-500">DEF</li>
+            <li class="text-green-500">MIL</li>
+            <li class="text-red-500">ATT</li>
+        </ul>
+        <div>
+            <label for="plan" class="text-gray-400">Schema</label>
+            <input type="button" value="4-4-2" name="plan" class="text-white bg-slate-950 p-2 rounded-md">
+        </div>
+    </header>
+
+    <main class="flex h-screen">
+        <aside class="flex flex-col items-center p-3 bg-slate-800 w-1/4 border-r-1 border-amber-500">
+            <input type="button" value="+ Ajouter un joueur" name="plan"
+                class="text-white bg-green-700 p-2 rounded-lg w-[97%] mb-6">
+            <div class="flex justify-between items-center w-[97%] mb-5">
+                <p class="text-white font-bold text-sm">Effectif</p>
+                <input type="button" value="1 joueur(s)" class="text-white bg-slate-950 p-1 rounded-md text-sm">
+            </div>
+            <p class="text-gray-400 text-sm mb-4">Cliquez sur un joueur place pour voir sa case sur le terrain. pour
+                modifier, pour supprimer.
+            </p>
+
+            <div class="flex flex-col p-5 w-[97%] border border-l-5 border-amber-500 rounded-lg">
+                <div class="flex justify-between items-center ">
+                    <div class="flex items-center gap-3 ">
+                        <p class="text-amber-500">11</p>
+                        <div>
+                            <p class="text-white font-bold">joueur</p>
+                            <p class="text-amber-500">Post</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button>🖊️</button>
+                        <button>🗑️</button>
+                    </div>
+                </div>
+
+                <select name="posts" id="posts" class="text-gray-400">
+                    <option value="">Sur le banc</option>
+                    <option value="GB-Gardien">GB-Gardien</option>
+                    <option value="DG-Defenseur gauche">DG-Defenseur gauche</option>
+                    <option value="DC - Défenseur central 1">DC - Défenseur central 1</option>
+                    <option value="DC - Défenseur central 2">DC - Défenseur central 2</option>
+                    <option value="DD - Défenseur droit">DD - Défenseur droit</option>
+                    <option value="MG - Milieu gauche">MG - Milieu gauche</option>
+                    <option value="MC - Milieu central 1">MC - Milieu central 1</option>
+                    <option value="MC - Milieu central 2">MC - Milieu central 2</option>
+                    <option value="MD - Milieu droit">MD - Milieu droit</option>
+                    <option value="BU - Buteur 1">BU - Buteur 1</option>
+                    <option value="BU - Buteur 2">BU - Buteur 2</option>
+                </select>
+            </div>
+
+
+
+
+        </aside>
+
+        <section class="flex justify-center items-center bg-slate-950 w-3/4">
+            <div class="grid_container p-3 w-[90%] border-1 border-amber-500 rounded-lg">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span
+                    class="flex justify-center items-center gap-3 bg-blue-600 border-2 border-red-600 rounded-lg text-white span_dgd">
+                    <p>N</p>
+                    <div>
+                        <p>DG</p>
+                        <p>Player</p>
+                    </div>
+                </span>
+                <span></span>
+                <span></span>
+                <span
+                    class="flex justify-center items-center gap-3 bg-blue-600 border-2 border-red-600 rounded-lg text-white span_mgd">
+                    <p>N</p>
+                    <div>
+                        <p>MG</p>
+                        <p>Player</p>
+                    </div>
+                </span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span
+                    class="flex justify-center items-center gap-3 bg-blue-600 border-2 border-red-600 rounded-lg text-white span_bu">
+                    <p>N</p>
+                    <div>
+                        <p>BU</p>
+                        <p>Player</p>
+                    </div>
+                </span>
+                <span
+                    class="flex justify-center items-center gap-3 bg-slate-900 border-2 border-white rounded-lg text-white span_gb">
+                    <p>N</p>
+                    <div>
+                        <p>GB</p>
+                        <p>Player</p>
+                    </div>
+                </span>
+                <span
+                    class="flex justify-center items-center gap-3 bg-blue-600 border-2 border-red-600 rounded-lg text-white span_dc">
+                    <p>N</p>
+                    <div>
+                        <p>DC</p>
+                        <p>Player</p>
+                    </div>
+                </span>
+                <span></span>
+                <span></span>
+                <span
+                    class="flex justify-center items-center gap-3 bg-blue-600 border-2 border-red-600 rounded-lg text-white span_mc">
+                    <p>N</p>
+                    <div>
+                        <p>MC</p>
+                        <p>Player</p>
+                    </div>
+                </span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span
+                    class="flex justify-center items-center gap-3 bg-blue-600 border-2 border-red-600 rounded-lg text-white span_dc">
+                    <p>N</p>
+                    <div>
+                        <p>DC</p>
+                        <p>Player</p>
+                    </div>
+                </span>
+                <span></span>
+                <span></span>
+                <span
+                    class="flex justify-center items-center gap-3 bg-blue-600 border-2 border-red-600 rounded-lg text-white span_mc">
+                    <p>N</p>
+                    <div>
+                        <p>MC</p>
+                        <p>Player</p>
+                    </div>
+                </span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span
+                    class="flex justify-center items-center gap-3 bg-blue-600 border-2 border-red-600 rounded-lg text-white span_bu">
+                    <p>N</p>
+                    <div>
+                        <p>BU</p>
+                        <p>Player</p>
+                    </div>
+                </span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span
+                    class="flex justify-center items-center gap-3 bg-blue-600 border-2 border-red-600 rounded-lg text-white span_dgd">
+                    <p>N</p>
+                    <div>
+                        <p>DD</p>
+                        <p>Player</p>
+                    </div>
+                </span>
+                <span></span>
+                <span></span>
+                <span
+                    class="flex justify-center items-center gap-3 bg-blue-600 border-2 border-red-600 rounded-lg text-white span_mgd">
+                    <p>N</p>
+                    <div>
+                        <p>MD</p>
+                        <p>Player</p>
+                    </div>
+                </span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

@@ -7,6 +7,7 @@
     <title>TACHKILA</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
 </head>
 
 <body>
@@ -29,9 +30,9 @@
         </div>
     </header>
 
-    <main class="flex h-screen">
+    <main class="flex h-[87vh]">
         <aside class="flex flex-col items-center p-3 bg-slate-800 w-1/4 border-r-1 border-amber-500">
-            <input type="button" value="+ Ajouter un joueur" name="plan"
+            <input type="button" value="+ Ajouter un joueur" name="plan" id="ajouter_btn"
                 class="text-white bg-green-700 p-2 rounded-lg w-[97%] mb-6">
             <div class="flex justify-between items-center w-[97%] mb-5">
                 <p class="text-white font-bold text-sm">Effectif</p>
@@ -51,7 +52,7 @@
                         </div>
                     </div>
                     <div>
-                        <button>🖊️</button>
+                        <button id="modifier_btn">🖊️</button>
                         <button>🗑️</button>
                     </div>
                 </div>
@@ -71,9 +72,6 @@
                     <option value="BU - Buteur 2">BU - Buteur 2</option>
                 </select>
             </div>
-
-
-
 
         </aside>
 
@@ -253,6 +251,97 @@
         </section>
     </main>
 
+    <section id="ajouter"
+        class="flex justify-center items-center backdrop-blur-md w-full h-full absolute top-0 text-white hidden">
+        <div
+            class="flex flex-col justify-between p-4 bg-slate-950 border-1 border-amber-500 rounded-lg  w-[30%] h-[80%]">
+            <div class="flex justify-between items-center w-[100%]">
+                <p class="font-bold">Ajouter un joueur</p>
+                <button class="quit_add">X</button>
+            </div>
+
+            <div class="flex flex-col items-start">
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" placeholder="Ex. Messi" class="bg-slate-800 w-[90%] rounded-md">
+            </div>
+            <div>
+                <p>Poste</p>
+                <div class="grid grid-cols-2 grid-rows-2 gap-4">
+                    <span>
+                        <input type="radio" name="poste" id="gardien">
+                        <label for="gardien">Gardien</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="poste" id="defenseur">
+                        <label for="defenseur">Defenseur</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="poste" id="milieu">
+                        <label for="milieu">Milieu</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="poste" id="attaquant">
+                        <label for="attaquant">Attaquant</label>
+                    </span>
+                </div>
+
+            </div>
+            <div class="flex flex-col items-start">
+                <label for="nom" id="number">Numero(1 a 99)</label>
+                <input type="text" placeholder="Ex. 10" id="number" class="bg-slate-800 w-[90%] rounded-md">
+            </div>
+            <div class="flex justify-end gap-3">
+                <button class="bg-slate-800 rounded-md p-2 quit_add">Annuler</button>
+                <button class="bg-green-700 rounded-md p-2">Ajouter</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="modifier"
+        class="flex justify-center items-center backdrop-blur-md w-full h-full absolute top-0 text-white hidden">
+        <div
+            class="flex flex-col justify-between p-4 bg-slate-950 border-1 border-amber-500 rounded-lg  w-[30%] h-[80%]">
+            <div class="flex justify-between items-center w-[100%]">
+                <p class="font-bold">Modifier le joueur</p>
+                <button class="quit_modify">X</button>
+            </div>
+
+            <div class="flex flex-col items-start">
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" placeholder="Ex. Messi" class="bg-slate-800 w-[90%] rounded-md">
+            </div>
+            <div>
+                <p>Poste</p>
+                <div class="grid grid-cols-2 grid-rows-2 gap-4">
+                    <span>
+                        <input type="radio" name="poste" id="gardien">
+                        <label for="gardien">Gardien</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="poste" id="defenseur">
+                        <label for="defenseur">Defenseur</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="poste" id="milieu">
+                        <label for="milieu">Milieu</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="poste" id="attaquant">
+                        <label for="attaquant">Attaquant</label>
+                    </span>
+                </div>
+
+            </div>
+            <div class="flex flex-col items-start">
+                <label for="nom" id="number">Numero(1 a 99)</label>
+                <input type="text" placeholder="Ex. 10" id="number" class="bg-slate-800 w-[90%] rounded-md">
+            </div>
+            <div class="flex justify-end gap-3">
+                <button class="bg-slate-800 rounded-md p-2 quit_modify">Annuler</button>
+                <button class="bg-green-700 rounded-md p-2">Ajouter</button>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

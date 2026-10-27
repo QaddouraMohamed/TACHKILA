@@ -1,4 +1,6 @@
-import { team } from "./data.js";
+//import { team } from "./data.js";
+
+let team = JSON.parse(localStorage.getItem("team")) || [];
 
 const aside = document.querySelector("aside");
 const players_template = document.querySelector("#players_template");
@@ -57,6 +59,69 @@ team.forEach((player) => {
   add_to_aside(player);
 });
 
+for (let player of team) {
+  if (player.right_now != "") {
+    switch (player.right_now) {
+      case "GB":
+        gb_num.textContent = player.number;
+        gb_player.textContent = player.name;
+        break;
+      case "DG":
+        dg_num.textContent = player.number;
+        dg_player.textContent = player.name;
+
+        break;
+      case "DC_1":
+        dc1_num.textContent = player.number;
+        dc1_player.textContent = player.name;
+
+        break;
+      case "DC_2":
+        dc2_num.textContent = player.number;
+        dc2_player.textContent = player.name;
+
+        break;
+      case "DD":
+        dd_num.textContent = player.number;
+        dd_player.textContent = player.name;
+
+        break;
+      case "MG":
+        mg_num.textContent = player.number;
+        mg_player.textContent = player.name;
+
+        break;
+      case "MC_1":
+        mc1_num.textContent = player.number;
+        mc1_player.textContent = player.name;
+
+        break;
+      case "MC_2":
+        mc2_num.textContent = player.number;
+        mc2_player.textContent = player.name;
+
+        break;
+      case "MD":
+        md_num.textContent = player.number;
+        md_player.textContent = player.name;
+
+        break;
+      case "BU_1":
+        bu1_num.textContent = player.number;
+        bu1_player.textContent = player.name;
+
+        break;
+      case "BU_2":
+        bu2_num.textContent = player.number;
+        bu2_player.textContent = player.name;
+
+        break;
+      default:
+        break;
+    }
+  }
+}
+
 ajouter_btn.addEventListener("click", toggle_add);
 quit_add.forEach((btn) => {
   btn.addEventListener("click", toggle_add);
@@ -81,8 +146,12 @@ form_ajouter.addEventListener("submit", (event) => {
       name: data.name,
       number: Number(data.number),
       position: data.position,
+      right_now: "",
     };
+    console.log(new_player);
     team.push(new_player);
+    console.log(team);
+    localStorage.setItem("team", JSON.stringify(team));
     players_num();
     add_to_aside(new_player);
     toggle_add();
@@ -121,9 +190,7 @@ aside.addEventListener("change", (event) => {
         clean_field(team[i]);
         switch (player_position) {
           case "GB":
-            console.log(team[i].right_now);
             add_to_field(player_position, gb_num, gb_player, team[i]);
-            console.log(team[i].right_now);
             break;
           case "DG":
             add_to_field(player_position, dg_num, dg_player, team[i]);
@@ -183,6 +250,7 @@ form_modifier.addEventListener("submit", (event) => {
         team[i].name = data.name;
         team[i].position = data.position;
         team[i].number = Number(data.number);
+        localStorage.setItem("team", JSON.stringify(team));
         if (team[i].right_now != "") {
           clean_field(team[i]);
         }
@@ -207,6 +275,7 @@ form_supprimer.addEventListener("submit", (event) => {
   for (let i = 0; i < team.length; i++) {
     if (team[i].id === player_id) {
       team.splice(i, 1);
+      localStorage.setItem("team", JSON.stringify(team));
       break;
     }
   }
@@ -315,6 +384,8 @@ function add_to_field(post, post_num, post_name, player) {
     post_num.textContent = player.number;
     post_name.textContent = player.name;
     player.right_now = post;
+
+    localStorage.setItem("team", JSON.stringify(team));
   } else {
     document.querySelector("#place_occupe_err").classList.remove("hidden");
     setTimeout(() => {

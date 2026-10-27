@@ -3,9 +3,8 @@
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(9, 1fr);
   gap: 1%;
-  height: 60%;
+  height: 80%;
   background-image: url("../assets/images/terrain.png");
-  background-size: cover;
   background-size: 100% 100%;
 }
 

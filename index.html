@@ -44,7 +44,7 @@
             </p>
 
             <template id="players_template">
-                <div class="flex flex-col p-5 w-[97%] border border-l-5 border-amber-500 rounded-lg player">
+                <div class="flex flex-col p-5 w-[97%] border border-l-5 border-amber-500 rounded-lg player text-white">
                     <div class="flex justify-between items-center ">
                         <div class="flex items-center gap-3 ">
                             <p class="text-amber-500 player_num">11</p>
@@ -59,7 +59,7 @@
                         </div>
                     </div>
 
-                    <select name="posts" class="posts" class="text-gray-400">
+                    <select name="posts" class="posts bg-slate-800">
                         <option value="">Sur le banc</option>
                     </select>
                 </div>
@@ -283,6 +283,8 @@
                 <label for="number_ajouter">Numero(1 a 99)</label>
                 <input type="number" min="1" max="99" placeholder="Ex. 10" name="number" id="number_ajouter"
                     class="bg-slate-800 w-[90%] rounded-md" required>
+                <p id="num_taken_add" class="text-red-500 hidden">Ce numéro de maillot est déjà pris par un joueur !!
+                </p>
             </div>
             <div class="flex justify-end gap-3">
                 <button type="button" class="bg-slate-800 rounded-md p-2 quit_add">Annuler</button>
@@ -331,6 +333,8 @@
                 <label for="number_modifier">Numero(1 a 99)</label>
                 <input type="number" min="1" max="99" placeholder="Ex. 10" name="number" id="number_modifier"
                     class="bg-slate-800 w-[90%] rounded-md" required>
+                <p id="num_taken_modify" class="text-red-500 hidden">Ce numéro de maillot est déjà pris par un joueur !!
+                </p>
             </div>
             <div class="flex justify-end gap-3">
                 <button type="button" class="bg-slate-800 rounded-md p-2 quit_modify">Annuler</button>
@@ -356,6 +360,12 @@
             </div>
         </form>
     </section>
+
+    <p id="place_occupe_err" class="absolute right-0 bottom-0 text-white bg-red-600 rounded-md p-2 mb-2 mr-2 hidden">Ce
+        poste sur
+        le terrain
+        est déjà
+        occupé par un joueur !!</p>
 </body>
 
 </html>
